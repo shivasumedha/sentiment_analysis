@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SolMate Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>💙 SolMate Emotion Detection</h1>
+
+    <form method="POST">
+        <textarea name="text" placeholder="Share your feelings...">{{ text }}</textarea>
+        <br>
+        <button type="submit">Analyze Emotion</button>
+    </form>
+
+    {% if emotion %}
+    <div class="result-box">
+        <h2>Emotion: {{ emotion.capitalize() }}</h2>
+        <p><strong>Confidence:</strong> {{ confidence }}%</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
